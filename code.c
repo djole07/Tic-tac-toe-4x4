@@ -49,6 +49,8 @@ int main() {
 		case -10 : masina? printf("Pobedio je covek. Svaka cast!\n") : printf("\nPobedio je prvi igrac\n"); break;
 		case 10 : masina? printf("Pobedila je masina\n") : printf("\nPobedio je drugi igrac\n"); break;
 	}
+	
+	system("PAUSE");
 	return 0;
 }
 
