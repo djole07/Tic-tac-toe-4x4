@@ -33,7 +33,7 @@ int main() {
 	inicijalizuj(Tabla);
 
 	do {
-		printf("\nDa li zelite da igrate:\n\t1  covek protiv coveka\n\t2  protiv masine\n\nIzbor: ");
+		printf("\nDa li zelite da igrate:\n\t1  covek protiv coveka\n\t2  covek protiv masine\n\nIzbor: ");
 		scanf("%d", &masina);
 		
 		if(masina - 1 > 1) {
