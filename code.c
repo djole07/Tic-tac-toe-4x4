@@ -1,6 +1,6 @@
 ////////////////////////////////////
 //
-//		Iks-oks na tabli 4x4
+//	Iks-oks na tabli 4x4
 //
 ////////////////////////////////////
 
@@ -53,7 +53,7 @@ int main() {
 }
 
 void inicijalizuj(int A[][4]) {
-// postavljanje sva polja table na nulu
+// postavljanje svih polja table na nulu
 	int i, j;
 	
 	for(i = 0 ; i < 4 ; i ++) {
@@ -102,25 +102,25 @@ int game(int A[][4], int I[], int masina) {
 	
 	int TEZINA = 6;	// koristi se u funkciji masina_potez
 // racunar ce 'najpametnije' igrati ukoliko je TEZINA postavljena na 0, ali ce se i program
-// znatno sporije izvrsavati prilikom prvih nekoliko poteza
+// znatno sporije izvrsavati prvih par poteza
 // TEZINA zapravo predstavlja broj praznih polja do koje ce racunar analizirati pozicije
 
 // npr. za TEZINA = 2, racunar ce analizirati sve pozicije koje postoje zakljucno sa onim
 // kojima su preostala 2 slobodna polja na tabli
 	
 	srand((unsigned)time(NULL));
-	int igrac = rand() % 2;			// generisemo nasumicno koji igrac igra
+	int igrac = rand() % 2;			// nasumicno generisemo koji igrac igra prvi
 	
 	int brojac = 0;				// brojac odigranih poteza
 	
 	Polje p;				// koristi se za poziv funkcije masina_potezi
 	
-	system("cls");		// brisemo sadrzaj konzole (radi samo u Windowss-u)
-				// isti efekat dobijamo i na Linux-u komandom system("clear");
+	system("cls");		// brisemo sadrzaj konzole (radi samo na Windows-u)
+				// isti efekat dobijamo na Linux-u komandom system("clear");
 	
 	while(++brojac % 17) {
 		if(igrac && masina) {
-			if(brojac == 1) {	// ukoliko masina prvo igra, prvi potez ce joj biti nasumican
+			if(brojac == 1) {	// ukoliko masina prva igra, prvi potez ce joj biti nasumican
 						// jer bi u suprotnom uvek igru zapocinjala istim potezom
 				int random = rand() % 16;
 				A[random / 4][random % 4] = 1;
@@ -202,7 +202,7 @@ Polje masina_potez(int A[][4], int igrac, int depth, int alfa, int beta, int *TE
 		}
 	}
 	
-	if(igrac) {					//	masina
+	if(igrac) {					// masina
 		best_score.score = -10000;		// inicijalna vrednost
 		for(i = 0 ; i < 4 ; i++) {
 			for(j = 0 ; j < 4 ; j++) {
