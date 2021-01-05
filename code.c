@@ -111,17 +111,17 @@ int game(int A[][4], int I[], int masina) {
 	srand((unsigned)time(NULL));
 	int igrac = rand() % 2;			// generisemo nasumicno koji igrac igra
 	
-	int brojac = 0;					// brojac odigranih poteza
+	int brojac = 0;				// brojac odigranih poteza
 	
-	Polje p;						// koristi se za poziv funkcije masina_potezi
+	Polje p;				// koristi se za poziv funkcije masina_potezi
 	
 	system("cls");		// brisemo sadrzaj konzole (radi samo u Windowss-u)
-						// isti efekat dobijamo i na Linux-u komandom system("clear");
+				// isti efekat dobijamo i na Linux-u komandom system("clear");
 	
 	while(++brojac % 17) {
 		if(igrac && masina) {
 			if(brojac == 1) {	// ukoliko masina prvo igra, prvi potez ce joj biti nasumican
-								// jer bi u suprotnom uvek igru zapocinjala istim potezom
+						// jer bi u suprotnom uvek igru zapocinjala istim potezom
 				int random = rand() % 16;
 				A[random / 4][random % 4] = 1;
 				TEZINA -= 2;
@@ -164,7 +164,7 @@ int game(int A[][4], int I[], int masina) {
 			
 		}
 		stampaj(A);	// ukoliko poziv ove 2 funkcije stavimo na pocetak petlje onda kada
-					// jedan od igraca pobedi, necemo videti poslednji odigran potez
+				// jedan od igraca pobedi, necemo videti poslednji odigran potez
 		
 		w = winner(A);
 		if(w) return w;
@@ -197,12 +197,12 @@ Polje masina_potez(int A[][4], int igrac, int depth, int alfa, int beta, int *TE
 		int w = winner(A);
 		if(w) { 
 			score.score = w * (slobodna_polja(A) + 1);	// odredjemo koliko je potez dobar
-														// ukoliko dobijemo veliku pozitivnu vrednost to znaci da je taj potez dobar za masinu
+						// ukoliko dobijemo veliku pozitivnu vrednost to znaci da je taj potez dobar za masinu
 			return score;
 		}
 	}
 	
-	if(igrac) {		//	masina
+	if(igrac) {					//	masina
 		best_score.score = -10000;		// inicijalna vrednost
 		for(i = 0 ; i < 4 ; i++) {
 			for(j = 0 ; j < 4 ; j++) {
@@ -230,7 +230,7 @@ Polje masina_potez(int A[][4], int igrac, int depth, int alfa, int beta, int *TE
 		}
 		return best_score;
 	}
-	else {			// 'covek'		ova grana simulira najbolji odgovor na potez masine
+	else {						// 'covek'	ova grana simulira najbolji odgovor na potez masine
 		best_score.score = 10000;		// inicijalna vrednost
 		for(i = 0 ; i < 4 ; i++) {
 			for(j = 0 ; j < 4 ; j++) {
@@ -294,7 +294,7 @@ int winner(int A[][4]) {
 			
 			// redovi
 			if(hor_broj != A[i][j]) {	// ukoliko je sledeci broj u redu razlicit od prethodnog
-				hor_broj = 0;			//	onda ne mozemo da imamo 4 ista broja zaredom
+				hor_broj = 0;		// onda ne mozemo da imamo 4 ista broja zaredom
 			}
 			
 			//kolone
