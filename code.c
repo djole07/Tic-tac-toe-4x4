@@ -126,12 +126,12 @@ int game(int A[][4], int I[], int masina) {
 						// jer bi u suprotnom uvek igru zapocinjala istim potezom
 				int random = rand() % 16;
 				A[random / 4][random % 4] = 1;
-				TEZINA -= 2;
+				if(TEZINA > 0) TEZINA -= 2;
 			}
 			else {
 				p = masina_potez(A, igrac, slobodna_polja(A), -10000, 10000, &TEZINA);
 				A[p.i][p.j] = 1;
-				if(brojac == 2) TEZINA = 2;
+				if(brojac == 2 && TEZINA > 0) TEZINA = 2;
 				else TEZINA = 0;
 				
 			}
